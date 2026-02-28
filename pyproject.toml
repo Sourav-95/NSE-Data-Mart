@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stockify"
+version = "0.1.0"
+description = "Stock fundamentals ingestion and processing pipeline"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Sourav Maity", email = "sourav.maity1@outlook.com" }
+]
+
+dependencies = [
+    "PyYAML>=6.0",
+    "yfinance>=1.0",
+    "pandas==3.0.0",
+    "polars>=0.19",
+    "duckdb>=1.4.4",
+    "pyarrow>=23.0.1"
+
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
