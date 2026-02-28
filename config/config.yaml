@@ -1,0 +1,22 @@
+# global config
+app:
+  name: stockify
+  environment: local
+
+ingestion:
+  source: yfinance
+  max_concurrency: 10
+  batch_size: 200
+  cool_down: 30
+  retries: 3
+  retry_backoff_seconds: 30
+
+# keep the path config separate to allow for easy updates and potential overrides in different environments
+paths:
+  raw_data: /Users/souravmaity/Documents/data_stocks/raw/
+  logs: logs
+  state: state
+  ticker_list: config/nse_tickers.csv
+
+runtime:
+  timezone: GMT +5:30
